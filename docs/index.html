@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nextor — natural-language quick capture for Apple Reminders & Calendar on macOS</title>
+<meta name="description" content="Nextor is a free, open-source macOS menu-bar app. Press ⇧⌘A from any app to see your overdue, today and upcoming items, then type in plain English, 中文 or 日本語 to add an Apple Reminder or Calendar event — time, location, priority and recurrence parsed automatically." />
+<link rel="canonical" href="https://ekkkkki.github.io/Nextor/" />
+<meta name="keywords" content="macOS reminders app, Apple Calendar quick add, natural language reminders, menu bar app, ⇧⌘A, quick capture, 中文 提醒, 日本語 リマインダー, open source" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Nextor — quick capture for Apple Reminders & Calendar" />
+<meta property="og:description" content="Press ⇧⌘A, glance at what's next, and add reminders & calendar events with natural language. Free, open-source, native macOS." />
+<meta property="og:image" content="https://ekkkkki.github.io/Nextor/shots/upcoming-en.png" />
+<meta property="og:url" content="https://ekkkkki.github.io/Nextor/" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Nextor",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "macOS 14.0 or later",
+  "description": "Free, open-source macOS menu-bar app for capturing Apple Reminders and Calendar events with natural language from anywhere via the ⇧⌘A hotkey, with an at-a-glance view of overdue, today and upcoming items. Works in English, Chinese and Japanese.",
+  "url": "https://ekkkkki.github.io/Nextor/",
+  "downloadUrl": "https://github.com/ekkkkki/Nextor/releases/latest",
+  "softwareVersion": "1.6.0",
+  "datePublished": "2026-06-07",
+  "inLanguage": ["en", "zh", "ja"],
+  "isAccessibleForFree": true,
+  "license": "https://opensource.org/licenses/MIT",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "screenshot": "https://ekkkkki.github.io/Nextor/shots/upcoming-en.png",
+  "featureList": [
+    "Global ⇧⌘A hotkey quick-capture panel",
+    "At-a-glance agenda: overdue, today and upcoming",
+    "Natural-language parsing in English, Chinese and Japanese",
+    "Automatic Reminder vs. Calendar event classification",
+    "Time, duration, range, location, priority, list, tags and recurrence parsing",
+    "Unified search across Reminders and Calendar",
+    "Private by default — runs locally"
+  ],
+  "author": { "@type": "Person", "name": "ekkkkki" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is Nextor?", "acceptedAnswer": { "@type": "Answer", "text": "Nextor is a free, open-source macOS menu-bar app for Apple Reminders and Calendar. Press ⇧⌘A from any app to see your overdue, today and upcoming items at a glance, then type in plain language to add a reminder or calendar event — Nextor parses the time, location, priority and recurrence for you." } },
+    { "@type": "Question", "name": "How do I add a reminder or event with Nextor?", "acceptedAnswer": { "@type": "Answer", "text": "Press ⇧⌘A anywhere to open the panel and type naturally, e.g. 'Design review tomorrow 3pm 30min' or '买牛奶 周五'. Nextor decides whether it's a Reminder or a Calendar event and fills in the details, then saves it to Apple Reminders or Calendar." } },
+    { "@type": "Question", "name": "Does Nextor work in Chinese and Japanese?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The natural-language parser and the app's interface are fully localized for English, 中文 and 日本語 — weekdays, times, durations, recurrence and locations are all understood in each language." } },
+    { "@type": "Question", "name": "How does Nextor decide between a reminder and a calendar event?", "acceptedAnswer": { "@type": "Answer", "text": "A time range or a duration (e.g. 9am–10am, 3pm 30min) makes it a Calendar event; a specific time with a place or a meeting word also becomes an event with the address extracted as the location; everything else is a Reminder." } },
+    { "@type": "Question", "name": "Is Nextor free and open source?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Nextor is free and open source under the MIT license. There is no account, no tracking and no subscription." } },
+    { "@type": "Question", "name": "Does Nextor send my data anywhere?", "acceptedAnswer": { "@type": "Answer", "text": "No. Everything runs locally on your Mac and writes directly to Apple Reminders and Calendar. An optional on-device Apple Intelligence refinement is opt-in and also stays on your device." } }
+  ]
+}
+</script>
+<style>
+  :root { --bg:#0c0d14; --bg2:#15101f; --card:#16171f; --text:#e8e8ee; --muted:#a0a0b0; --accent:#7c6cff; --accent2:#b65cff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Hiragino Sans",sans-serif;
+         color:var(--text); background:linear-gradient(150deg,var(--bg),var(--bg2)); min-height:100vh; }
+  .wrap { max-width:980px; margin:0 auto; padding:0 24px; }
+  header { text-align:center; padding:68px 0 36px; }
+  .logo { font-size:14px; letter-spacing:.3em; color:var(--muted); text-transform:uppercase; }
+  .eyebrow { display:inline-block; font-size:13px; color:var(--accent); background:#7c6cff1a; border:1px solid #7c6cff33;
+             border-radius:999px; padding:5px 13px; margin:18px 0 4px; }
+  h1 { font-size:54px; line-height:1.1; margin:10px 0 8px; letter-spacing:-.02em; }
+  h1 .grad { background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .sub { font-size:21px; color:var(--muted); max-width:680px; margin:0 auto 28px; }
+  .cta { display:inline-flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+  .btn { display:inline-block; padding:13px 26px; border-radius:12px; font-weight:600; text-decoration:none; transition:.15s; }
+  .btn-primary { background:linear-gradient(90deg,var(--accent),var(--accent2)); color:#fff; }
+  .btn-primary:hover { filter:brightness(1.1); transform:translateY(-1px); }
+  .btn-ghost { background:#ffffff14; color:var(--text); border:1px solid #ffffff22; }
+  .btn-ghost:hover { background:#ffffff22; }
+  .langbar { display:flex; gap:6px; justify-content:center; margin-bottom:22px; }
+  .langbar a { font-size:13px; color:var(--muted); text-decoration:none; padding:5px 12px; border-radius:8px; }
+  .langbar a:hover { background:#ffffff14; color:var(--text); }
+  .langbar a.active { background:#ffffff1f; color:var(--text); font-weight:600; }
+  .shot { display:block; width:100%; border-radius:16px; margin:44px 0; box-shadow:0 30px 80px #0008; }
+  .kbd { font-family:ui-monospace,monospace; background:#ffffff14; border:1px solid #ffffff22; border-radius:6px; padding:2px 7px; font-size:.85em; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; margin:24px 0; }
+  .card { background:var(--card); border:1px solid #ffffff12; border-radius:14px; padding:22px; }
+  .card h3 { font-size:17px; margin-bottom:6px; }
+  .card p { color:var(--muted); font-size:14px; }
+  h2 { font-size:30px; text-align:center; margin:64px 0 8px; letter-spacing:-.01em; }
+  .center { text-align:center; color:var(--muted); }
+  .lede { max-width:720px; margin:0 auto; text-align:center; font-size:17px; }
+  .lede strong { color:var(--text); }
+  table.ex { width:100%; border-collapse:collapse; margin:22px 0; font-size:14.5px; }
+  table.ex td { padding:11px 14px; border-bottom:1px solid #ffffff12; vertical-align:top; }
+  table.ex td.in { font-family:ui-monospace,monospace; color:#d8d2ff; white-space:nowrap; }
+  .faq { max-width:760px; margin:14px auto 0; }
+  .faq details { background:var(--card); border:1px solid #ffffff12; border-radius:12px; padding:14px 18px; margin:10px 0; }
+  .faq summary { font-weight:600; cursor:pointer; font-size:15.5px; list-style:none; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::before { content:"＋"; color:var(--accent); margin-right:10px; }
+  .faq details[open] summary::before { content:"－"; }
+  .faq p { color:var(--muted); font-size:14.5px; margin-top:10px; }
+  footer { text-align:center; color:var(--muted); padding:60px 0 40px; font-size:14px; }
+  footer a { color:var(--accent); text-decoration:none; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width:680px){ h1{font-size:38px} .two{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="langbar"><a href="index.html" class="active">English</a><a href="zh.html">中文</a><a href="ja.html">日本語</a></div>
+    <div class="logo">⌘ Nextor</div>
+    <div class="eyebrow">Free macOS menu-bar app for Apple Reminders &amp; Calendar</div>
+    <h1>See what's next.<br><span class="grad">Add what's new.</span></h1>
+    <p class="sub">Press <span class="kbd">⇧⌘A</span> from any app to glance at your overdue, today and upcoming items —
+      then type in plain English, 中文 or 日本語 to add a Reminder or Calendar event, with the time, place, priority and
+      recurrence parsed for you.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/ekkkkki/Nextor/releases/latest">Download for macOS</a>
+      <a class="btn btn-ghost" href="https://github.com/ekkkkki/Nextor">View on GitHub</a>
+    </div>
+  </header>
+
+  <img class="shot" src="shots/upcoming-en.png" alt="Nextor showing overdue, today and upcoming items grouped by day in the panel" />
+
+  <h2>What is Nextor?</h2>
+  <p class="lede"><strong>Nextor is a free, open-source macOS menu-bar app for Apple Reminders and Calendar.</strong>
+    Hit <span class="kbd">⇧⌘A</span> anywhere and the panel opens to your agenda — overdue, today, and the next few days,
+    grouped. Type the way you think (in English, Chinese or Japanese) and Nextor decides whether it's a reminder or a
+    calendar event, pulls out the time, location, priority, list, tags and recurrence, and saves it — no app-switching,
+    no forms. Everything runs locally on your Mac.</p>
+
+  <h2>Type naturally. It figures out the rest.</h2>
+  <p class="center">A time range or a duration makes it an event. A place or a meeting word makes it an event.
+    Everything else is a reminder.</p>
+  <table class="ex">
+    <tr><td class="in">Design review tomorrow 3pm 30min</td><td>→ Calendar event, 3:00–3:30 PM</td></tr>
+    <tr><td class="in">Team sync Fri 9am-10am</td><td>→ event with a time range</td></tr>
+    <tr><td class="in">Client meeting tomorrow 3pm 250 Main St</td><td>→ event, address → location 📍</td></tr>
+    <tr><td class="in">Buy oat milk ~Groceries #errands !!</td><td>→ high-priority reminder in a list, tagged</td></tr>
+    <tr><td class="in">Standup every Monday 10am</td><td>→ repeating reminder, weekly on Monday</td></tr>
+  </table>
+  <img class="shot" src="shots/hero-en.png" alt="Nextor turning a typed line into a calendar event with the location filled in" />
+
+  <div class="two">
+    <img class="shot" style="margin:8px 0" src="shots/add-reminder-en.png" alt="Adding a reminder" />
+    <img class="shot" style="margin:8px 0" src="shots/add-event-en.png" alt="Adding an event" />
+  </div>
+
+  <h2>Features</h2>
+  <div class="grid">
+    <div class="card"><h3>📅 Glance + add</h3><p>Opening the panel shows overdue, today and upcoming items grouped by day, so you see what's next before you type.</p></div>
+    <div class="card"><h3>⌨️ Global hotkey</h3><p>A Spotlight-style panel drops in over any app (shortcut is customizable) and returns focus when you're done.</p></div>
+    <div class="card"><h3>🧠 Natural language</h3><p>Times, durations, ranges, repeats, lead-time alarms, priority and locations — parsed from the way you actually type.</p></div>
+    <div class="card"><h3>📍 Smart classification</h3><p>Knows a meeting at an address is an event, and extracts the location automatically.</p></div>
+    <div class="card"><h3>🔁 Powerful repeats</h3><p>Daily/weekly/monthly, multiple weekdays (<span class="kbd">every mon wed fri</span>), and ends like <span class="kbd">×10</span> or <span class="kbd">until Friday</span>.</p></div>
+    <div class="card"><h3>🔎 Today &amp; search</h3><p>A Today glance plus unified search across Reminders and Calendar — <span class="kbd">is:event due:week</span>. Reschedule or complete in place.</p></div>
+    <div class="card"><h3>↩ Undo &amp; batch</h3><p>Misadd? ⌘Z. Paste a list and add every line at once with ⌥↩.</p></div>
+    <div class="card"><h3>🔒 Private by default</h3><p>Everything is local. Optional on-device Apple Intelligence refinement — nothing leaves your Mac.</p></div>
+  </div>
+
+  <img class="shot" src="shots/search-en.png" alt="Smart search across reminders and calendar" />
+
+  <h2>FAQ</h2>
+  <div class="faq">
+    <details open><summary>What is Nextor?</summary><p>A free, open-source macOS menu-bar app for Apple Reminders and Calendar. Press ⇧⌘A from any app to see your overdue, today and upcoming items, then type in plain language to add a reminder or calendar event — Nextor parses the time, location, priority and recurrence for you.</p></details>
+    <details><summary>How do I add a reminder or event?</summary><p>Press ⇧⌘A anywhere and type naturally, e.g. <span class="kbd">Design review tomorrow 3pm 30min</span> or <span class="kbd">买牛奶 周五</span>. Nextor decides whether it's a Reminder or a Calendar event, fills in the details, and saves it to Apple Reminders or Calendar.</p></details>
+    <details><summary>Does it work in Chinese and Japanese?</summary><p>Yes — the parser and the interface are fully localized for English, 中文 and 日本語. Weekdays, times, durations, recurrence and locations are understood in each language.</p></details>
+    <details><summary>How does it decide reminder vs. calendar event?</summary><p>A time range or a duration (9am–10am, 3pm 30min) makes it a Calendar event; a specific time with a place or a meeting word also becomes an event with the address as its location; everything else is a Reminder.</p></details>
+    <details><summary>Is it free and open source?</summary><p>Yes — free and open source under the MIT license. No account, no tracking, no subscription.</p></details>
+    <details><summary>Does it send my data anywhere?</summary><p>No. Everything runs locally and writes directly to Apple Reminders and Calendar. The optional Apple Intelligence refinement is opt-in and stays on your device.</p></details>
+  </div>
+
+  <footer>
+    Free &amp; open source under the MIT license · <a href="https://github.com/ekkkkki/Nextor">github.com/ekkkkki/Nextor</a><br>
+    Not affiliated with Apple. Reminders and Calendar are trademarks of Apple Inc.
+  </footer>
+</div>
+</body>
+</html>
